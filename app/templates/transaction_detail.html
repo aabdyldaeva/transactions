@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ transaction.id }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">transaction value: {{ transaction.value}} </h6>
+            <h6 class="card-subtitle mb-2 text-muted">transaction status: {{ transaction.status }} </h6>
+            <p class="card-text">transaction unit: {{ transaction.unit }}</p>
+              <p class="card-text">transaction comment: {{ transaction.comment }} </p>
+            <a href="{{ url_for('transaction_update', transaction_id=transaction_id) }}" class="card-link">Update</a>
+            <a href="{{ url_for('transaction_delete', transaction_id=transaction_id) }}" class="card-link">Delete</a>
+          </div>
+        </div>
+    </div>
+{% endblock %}
